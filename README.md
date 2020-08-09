@@ -1,1 +1,1 @@
-# springboot-security-sso
+security-oauth2-sso
