@@ -3,13 +3,11 @@ package org.dy.security;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * @author caiwl
- * @date 2020/8/8 23:06
- */
 @SpringBootApplication
-public class MemoryApplication {
+public class JdbcApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(MemoryApplication.class, args);
+        SpringApplication.run(JdbcApplication.class, args);
     }
+
 }
