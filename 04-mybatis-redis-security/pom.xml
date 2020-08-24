@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.dy.security</groupId>
-    <artifactId>04-mybaitis-redis-security</artifactId>
+    <artifactId>04-mybatis-redis-security</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>04-mybaitis-redis-security</name>
-    <description>04-mybaitis-redis-security</description>
+    <name>04-mybatis-redis-security</name>
+    <description>04-mybatis-redis-security</description>
 
     <properties>
         <java.version>1.8</java.version>
