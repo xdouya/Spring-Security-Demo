@@ -8,6 +8,7 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,7 +33,7 @@ public class JwtUtil {
      * @param userId   用户ID
      * @return 加密的token
      */
-    public static String sign(String userName, String userId) {
+    public static String sign(String userName, String authorities) {
         try {
             //过期时间
             Date date = new Date(System.currentTimeMillis() + EXPIRE_TIME);
@@ -47,7 +48,7 @@ public class JwtUtil {
                     .withHeader(header)
                     .withExpiresAt(date)
                     .withClaim("userName", userName)
-                    .withClaim("userId", userId)
+                    .withClaim("authorities", authorities)
                     .sign(algorithm);
 
         } catch (Exception ex) {
@@ -83,6 +84,21 @@ public class JwtUtil {
         try {
             DecodedJWT jwt = JWT.decode(token);
             return jwt.getClaim("userName").asString();
+        } catch (JWTDecodeException ex) {
+            return null;
+        }
+    }
+
+    /**
+     * 获取token中的信息无需secret解密也能获取
+     *
+     * @param token 密钥
+     * @return token中包含的用户名
+     */
+    public static String getAuthorities(String token) {
+        try {
+            DecodedJWT jwt = JWT.decode(token);
+            return jwt.getClaim("authorities").asString();
         } catch (JWTDecodeException ex) {
             return null;
         }
