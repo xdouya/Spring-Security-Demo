@@ -27,7 +27,7 @@ import java.util.Map;
  */
 public class JwtLoginFilter extends AbstractAuthenticationProcessingFilter {
 
-    protected JwtLoginFilter(String defaultFilterProcessUrl, AuthenticationManager authenticationManager){
+    JwtLoginFilter(String defaultFilterProcessUrl, AuthenticationManager authenticationManager){
         super(new AntPathRequestMatcher(defaultFilterProcessUrl));
         setAuthenticationManager(authenticationManager);
     }
