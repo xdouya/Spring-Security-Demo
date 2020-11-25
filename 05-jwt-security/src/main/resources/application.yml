@@ -4,9 +4,9 @@ spring:
   profiles:
     active: dev
   redis:
-    host: localhost
+    host: 192.168.0.103
     port: 6379
-    password: avicit
+    password: "dy088114"
     database: 0
 mybatis:
   mapper-locations: classpath:mapper/*.xml
